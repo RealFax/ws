@@ -498,6 +498,10 @@ func (u Upgrader) Upgrade(conn io.ReadWriter) (hs Handshake, err error) {
 
 		nonce = make([]byte, nonceSize)
 	)
+
+	// init header receiver
+	hs.Header = make(http.Header)
+
 	for err == nil {
 		line, e := readLine(br)
 		if e != nil {
@@ -513,6 +517,9 @@ func (u Upgrader) Upgrade(conn io.ReadWriter) (hs Handshake, err error) {
 			err = ErrMalformedRequest
 			break
 		}
+
+		// add header
+		hs.Header.Add(btsToString(k), btsToString(v))
 
 		switch btsToString(k) {
 		case headerHostCanonical:
