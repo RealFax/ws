@@ -5,6 +5,15 @@
 
 > [RFC6455][rfc-url] WebSocket implementation in Go.
 
+# About this fork
+_this fork adds support for obtaining handshake request headers_
+
+to use this package you should add this to your `go.mod`
+
+```go.mod
+replace github.com/gobwas/ws v1.3.0 => github.com/RealFax/ws v0.1.0
+```
+
 # Features
 
 - Zero-copy upgrade
