@@ -11,7 +11,7 @@ _this fork adds support for obtaining handshake request headers_
 to use this package you should add this to your `go.mod`
 
 ```go.mod
-replace github.com/gobwas/ws v1.3.0 => github.com/RealFax/ws v0.1.0
+replace github.com/gobwas/ws v1.3.0 => github.com/RealFax/ws v0.2.0
 ```
 
 # Features
