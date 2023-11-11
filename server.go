@@ -519,7 +519,7 @@ func (u Upgrader) Upgrade(conn io.ReadWriter) (hs Handshake, err error) {
 		}
 
 		// copy and add header
-		hs.Header.Add(btsToString(bytes.Clone(k)), btsToString(bytes.Clone(v)))
+		hs.Header.Add(btsToString(fastBytesClone(k)), btsToString(fastBytesClone(v)))
 
 		switch btsToString(k) {
 		case headerHostCanonical:

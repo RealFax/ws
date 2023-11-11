@@ -197,3 +197,12 @@ func nonZero(a, b int) int {
 	}
 	return b
 }
+
+func fastBytesClone(b []byte) []byte {
+	if b == nil {
+		return nil
+	}
+	nb := make([]byte, len(b))
+	copy(nb, b)
+	return nb
+}
